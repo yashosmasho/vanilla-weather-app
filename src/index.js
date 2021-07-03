@@ -1,9 +1,14 @@
-let now = new Date();
-
-let currentDay = document.querySelector("#current-day");
-{
+function formatDate (timestamp) {
+  let now = new Date(timestamp);
   let hours = now.getHours();
+   if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
   let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
   let days = [
     "Sunday",
@@ -17,8 +22,9 @@ let currentDay = document.querySelector("#current-day");
 
   let day = days[now.getDay()];
 
-  currentDay.innerHTML = `${day}, ${hours}:${minutes}`;
+  return `${day}, ${hours}:${minutes}`;
 }
+
 
 //
 
@@ -37,6 +43,9 @@ function getTemp(response) {
 
   let overview = document.querySelector("#overview");
   overview.innerHTML = (response.data.weather[0].description);
+
+  let currentDay = document.querySelector("#current-day");
+  currentDay.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function search(event) {
