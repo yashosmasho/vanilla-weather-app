@@ -24,10 +24,7 @@ function formatDate (timestamp) {
 
   return `${day}, ${hours}:${minutes}`;
 }
-
-
 //
-
 function getTemp(response) {
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = response.data.name;
@@ -46,6 +43,10 @@ function getTemp(response) {
 
   let currentDay = document.querySelector("#current-day");
   currentDay.innerHTML = formatDate(response.data.dt * 1000);
+
+  let icon = document.querySelector("#icon");
+  icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  icon.setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(event) {
