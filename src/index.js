@@ -24,11 +24,19 @@ let currentDay = document.querySelector("#current-day");
 
 function getTemp(response) {
   let cityName = document.querySelector("#city-name");
-  let city = response.data.name;
-  cityName.innerHTML = `${city}`;
+  cityName.innerHTML = response.data.name;
 
   let temperature = document.querySelector("#main-temperature");
   temperature.innerHTML = Math.round(response.data.main.temp);
+
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = (response.data.main.humidity);
+
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = Math.round(response.data.wind.speed);
+
+  let overview = document.querySelector("#overview");
+  overview.innerHTML = (response.data.weather[0].description);
 }
 
 function search(event) {
