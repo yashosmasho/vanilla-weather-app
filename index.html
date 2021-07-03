@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link href="src/styles.css" rel="stylesheet" />
+
+    <script
+      src="https://kit.fontawesome.com/a17f94e71e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <form class="mb-3" id="search-form">
+        <div class="row">
+          <div class="col-9">
+            <input
+              type="search"
+              placeholder="Enter a city"
+              autofocus="on"
+              class="form-control"
+              id="city-search"
+            />
+          </div>
+          <div class="col-2" id="search-button">
+            <input type="submit" value="Search" class="btn btn-danger" />
+          </div>
+          <div class="col-1" id="current-location">
+            <input type="submit" value="📍" class="btn btn-light" />
+          </div>
+        </div>
+      </form>
+
+      <div class="row">
+        <div class="col-6">
+          <h1 id="city-name">Adelaide</h1>
+          <h3 id="current-day">Friday, 25 June 2021 | 6:00PM</h3>
+          <h3 id="overview">Cloudy</h3>
+          <img src="img/sunny.png" width="120px" />
+        </div>
+        <div class="col-6">
+          <h2 class="temp">
+            <span id="main-temperature">19</span
+            ><span id="main-units">°C | °F</span>
+          </h2>
+          <ul>
+            <li>Humidity: 70%</li>
+            <li>Wind: 60 km/h</li>
+          </ul>
+        </div>
+
+        <div class="row">
+          <div class="col forecast">
+            <h4>Sat</h4>
+            <img src="img/sunny.png" width="60px" />
+            <strong>20°</strong> | 16°
+          </div>
+          <div class="col forecast">
+            <h4>Sun</h4>
+            <img src="img/cloudy.png" width="60px" />
+            <strong>20°</strong> | 16°
+          </div>
+          <div class="col forecast">
+            <h4>Mon</h4>
+            <img src="img/cloudy.png" width="60px" />
+            <strong>20°</strong> | 16°
+          </div>
+          <div class="col forecast">
+            <h4>Tue</h4>
+            <img src="img/cloudy.png" width="60px" />
+            <strong>20°</strong> | 16°
+          </div>
+          <div class="col forecast">
+            <h4>Wed</h4>
+            <img src="img/rainy.png" width="60px" />
+            <strong>20°</strong> | 16°
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>
+      <a href="https://github.com/yashosmasho/my-weather-app" target="_blank"
+        >Open-source code</a
+      >
+      by Yashinni M
+    </p>
+    <script src="src/index.js"></script>
+  </body>
+</html>
