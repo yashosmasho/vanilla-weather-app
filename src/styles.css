@@ -69,6 +69,19 @@ li {
   top: -25px;
 }
 
+#main-units .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+#main-units .active: hover{
+ text-decoration: none;
+}
+
 #overview {
   text-transform: capitalize;
 }
+
+
+

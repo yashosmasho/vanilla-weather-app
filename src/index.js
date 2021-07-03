@@ -24,7 +24,7 @@ function formatDate (timestamp) {
 
   return `${day}, ${hours}:${minutes}`;
 }
-//
+
 function getTemp(response) {
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = response.data.name;
@@ -47,6 +47,8 @@ function getTemp(response) {
   let icon = document.querySelector("#icon");
   icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   icon.setAttribute("alt", response.data.weather[0].description);
+
+  celsiusTemperature = response.data.main.temp;
 }
 
 function search(city) {
@@ -65,6 +67,32 @@ let searchNow = document.querySelector("#search-form");
 searchNow.addEventListener("submit", handleSubmit);
 
 search ("Adelaide");
+
+function getFahrenheit(event) {
+  event.preventDefault();
+  let mainTemp = document.querySelector("#main-temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  mainTemp.innerHTML = Math.round(fahrenheitTemp);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", getFahrenheit);
+
+function getCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let mainTemp = document.querySelector("#main-temperature");
+  mainTemp.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", getCelsius);
+
 //
 
 function currentPosition(position) {
