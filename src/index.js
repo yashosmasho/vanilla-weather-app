@@ -49,20 +49,22 @@ function getTemp(response) {
   icon.setAttribute("alt", response.data.weather[0].description);
 }
 
-function search(event) {
-  event.preventDefault();
-  let searchCity = document.querySelector("#city-search");
-  let cityHeading = document.querySelector("#city-name");
-  cityHeading.innerHTML = `${searchCity.value}`;
-
-  let city = `${searchCity.value}`;
+function search(city) {
   let apiKey = "938a807e7f1ca26a89a29e8d800f3a6b";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(getTemp);
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(getTemp);  
 }
-let searchNow = document.querySelector("#search-form");
-searchNow.addEventListener("submit", search);
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchCity = document.querySelector("#city-search");
+  search(searchCity.value);
+}
+
+let searchNow = document.querySelector("#search-form");
+searchNow.addEventListener("submit", handleSubmit);
+
+search ("Adelaide");
 //
 
 function currentPosition(position) {
