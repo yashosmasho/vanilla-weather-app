@@ -11,6 +11,7 @@
 h1 {
   color: rgb(255, 80, 60);
   font-size: 35px;
+  margin-bottom: 0;
 }
 
 h2 {
@@ -78,4 +79,8 @@ li {
 
 .weather-forecast {
   text-align: center;
+}
+
+#weather-area {
+  padding-bottom: 15px;
 }
