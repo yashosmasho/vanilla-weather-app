@@ -48,48 +48,26 @@
           <h1 id="city-name"></h1>
           <h3>Last updated: <span id="current-day"></span></h3>
           <h3 id="overview"></h3>
-          <img src=".." alt="" width="120px" id="icon"/>
+          <img src=".." alt="" width="120px" id="icon" />
         </div>
         <div class="col-6">
           <h2 class="temp">
             <span id="main-temperature"></span
-            ><span id="main-units"><a href="#" id="celsius-link" class="active">°C</a> | <a href="#" id="fahrenheit-link">°F</a></span>
+            ><span id="main-units"
+              ><a href="#" id="celsius-link" class="active">°C</a> |
+              <a href="#" id="fahrenheit-link">°F</a></span
+            >
           </h2>
           <ul>
             <li>Humidity: <span id="humidity">70</span>%</li>
             <li>Wind: <span id="wind">60</span> km/h</li>
           </ul>
         </div>
-
-        <div class="row">
-          <div class="col forecast">
-            <h4>Sat</h4>
-            <img src="img/sunny.png" width="60px" />
-            <strong>20°</strong> | 16°
-          </div>
-          <div class="col forecast">
-            <h4>Sun</h4>
-            <img src="img/cloudy.png" width="60px" />
-            <strong>20°</strong> | 16°
-          </div>
-          <div class="col forecast">
-            <h4>Mon</h4>
-            <img src="img/cloudy.png" width="60px" />
-            <strong>20°</strong> | 16°
-          </div>
-          <div class="col forecast">
-            <h4>Tue</h4>
-            <img src="img/cloudy.png" width="60px" />
-            <strong>20°</strong> | 16°
-          </div>
-          <div class="col forecast">
-            <h4>Wed</h4>
-            <img src="img/rainy.png" width="60px" />
-            <strong>20°</strong> | 16°
-          </div>
         </div>
+        <div class="weather-forecast" id="forecast"></div>
       </div>
     </div>
+
     <p>
       <a href="https://github.com/yashosmasho/my-weather-app" target="_blank"
         >Open-source code</a

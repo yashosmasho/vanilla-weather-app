@@ -27,7 +27,7 @@ h3 {
 
 h4 {
   color: #97c30a;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
 }
 
@@ -52,14 +52,7 @@ li {
   top: 100px;
 }
 
-.weather-obs {
-  color: #dc3545;
-  font-size: 18px;
-  position: relative;
-  top: 90px;
-}
-
-.forecast {
+#weather-forecast {
   text-align: center;
 }
 
@@ -75,13 +68,14 @@ li {
   text-decoration: none;
 }
 
-#main-units .active: hover{
- text-decoration: none;
+#main-units.active: hover {
+  text-decoration: none;
 }
 
 #overview:first-letter {
   text-transform: capitalize;
 }
 
-
-
+.weather-forecast {
+  text-align: center;
+}
